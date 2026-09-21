@@ -30,3 +30,4 @@ window.nav=h=>{location.hash=h;render()};
 window.tog=(el,k)=>{S[k]=!S[k];el.setAttribute('aria-checked',S[k]);save()};
 window.onbGo=n=>{S.onb=n;document.querySelectorAll('.onb').forEach((o,i)=>o.style.display=i===n?'block':'none');document.querySelectorAll('.dots i').forEach((d,i)=>d.classList.toggle('on',i===n));if(n>=3){S.done=true;save();location.hash='#setup';render()}};
 document.addEventListener('DOMContentLoaded',()=>{if(!S.done){location.hash='#intro'}render()});
+setInterval(()=>{var st=document.querySelector('#strip');if(st&&!st.children.length){var d=new Date(),h='';for(var i=0;i<5;i++){var x=new Date(d);x.setDate(d.getDate()-2+i);h+='<div class="day'+(i===2?' on':'')+'">D<b>'+x.getDate()+'</b></div>'}st.innerHTML=h}},800);
