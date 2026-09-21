@@ -3,6 +3,7 @@
 <link rel="icon" href="assets/logo.svg"><link rel="stylesheet" href="styles.css"></head>
 <body><div class="wrap">
 <div class="top"><img src="assets/logo.svg" alt="Drift logo"><div><b>✦ Drift</b><br><small>FOCUS · DISTILLED</small></div></div>
+<section id="splash" class="view"><div class="card" style="text-align:center;padding:34px 16px"><img src="assets/logo.svg" alt="Drift" style="width:54px;height:54px"><h2 class="serif" style="margin:10px 0 4px">Drift</h2><p class="d">Focus, distilled.</p><div class="bar" style="max-width:180px;margin:12px auto"><i style="width:70%"></i></div></div></section>
 <section id="intro" class="view">
 <div class="seg"><button class="on">Intro</button><button onclick="onbGo(1)">Track</button><button onclick="onbGo(2)">Private</button></div>
 <div class="onb"><img loading="lazy" src="https://images.pexels.com/photos/1497036/pexels-photo-1497036.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Minimal desk"><div class="pad"><h3 class="serif" style="margin:0">Clean focus, daily.</h3><p class="d">Timer, tasks, streaks. One calm page.</p><p><button class="btn-p" onclick="onbGo(1)">Next</button></p></div></div>
@@ -27,5 +28,6 @@
 <div class="card"><h3>September</h3><p class="d">Week strip, selected day dark.</p><div class="strip" id="strip"></div></div>
 <div class="kpis" id="stats"></div>
 <div class="card"><h3>Library</h3><div class="row sub"><span>Session notes</span><span>→</span></div><div class="row"><span>Notifications</span><div class="tog" role="switch" aria-checked="true" onclick="tog(this,'togN')"></div></div><div class="row"><span>Strict</span><div class="tog" role="switch" aria-checked="true" onclick="tog(this,'togS')"></div></div><div class="row"><span>Backup</span><button onclick="exp()">Export</button></div></div></section>
-<nav><button data-h="#focus" onclick="nav('#focus')">✦ Focus</button><button data-h="#stats-view" onclick="nav('#stats-view')">Stats</button><button data-h="#setup" onclick="nav('#setup')">Setup</button></nav>
+<nav><button data-h="#focus" onclick="nav('#focus')">✦ Focus</button><button data-h="#stats-view" onclick="nav('#stats-view')">Stats</button><button data-h="#setup" onclick="nav('#setup')">Setup</button><div id="sheet" style="position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:76px;background:var(--smoky);color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;opacity:0;transition:.3s;pointer-events:none">Session logged. Take a breath.</div><script>setInterval(()=>{var sh=document.querySelector("#sheet");if(sh)sh.style.cssText+=""},5000)</script>
+</nav>
 </div><script src="app.js"></script><script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js'))}</script></body></html>
