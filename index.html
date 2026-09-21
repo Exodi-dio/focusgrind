@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dio Grind — Focus Tracker by Dio</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#7F52FF">
+<link rel="icon" href="assets/logo.svg"><link rel="stylesheet" href="styles.css"></head>
+<body><div class="blob" style="width:280px;height:280px;background:#7F52FF;top:-60px;left:-60px"></div><div class="blob" style="width:240px;height:240px;background:#00A4EF;bottom:10%;right:-80px"></div>
+<div class="wrap">
+<div class="brand"><img src="assets/logo.svg" alt="Dio Grind logo"><div><b>Dio Grind</b><small>BY DIO_Exodi · FR</small></div></div>
+
+<!-- INTRO / SETUP with Pexels stock + gradient -->
+<section id="intro" class="view">
+<div class="onb" style="display:block"><img loading="lazy" src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Deep study desk"><div class="shade"><div><h2>Grind in capsules.</h2><p class="sub" style="text-align:left">Liquid timer, calm streaks, zero noise.</p><button class="btn-p" onclick="onbGo(1)">Next</button></div></div></div>
+<div class="onb" style="display:none"><img loading="lazy" src="https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Focus notebook"><div class="shade"><div><h2>Track everything.</h2><p class="sub" style="text-align:left">Tasks, subjects, weekly bars.</p><button class="btn-p" onclick="onbGo(2)">Next</button></div></div></div>
+<div class="onb" style="display:none"><img loading="lazy" src="https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Calm workspace"><div class="shade"><div><h2>Stay private.</h2><p class="sub" style="text-align:left">Local-first. No signup. Your data stays.</p><button class="btn-p" onclick="onbGo(3)">Start setup</button></div></div></div>
+<div class="dots"><i class="on"></i><i></i><i></i></div>
+<p class="sub">Photos: Pexels CDN · Motion: motionsites language · Components: 21st bento/stats</p>
+</section>
+
+<section id="setup" class="view"><div class="card"><h3>Setup in 10 seconds</h3>
+<label class="sub" style="text-align:left">Daily goal (min)</label><input type="number" value="120" onchange="setP('goal',this.value)">
+<label class="sub" style="text-align:left">Focus length</label><input type="number" value="25" onchange="setP('focus',this.value)">
+<div class="btnrow" style="margin-top:12px"><button class="btn-p" onclick="nav('#focus')">Start grinding</button></div></div></section>
+
+<!-- TRACKER -->
+<section id="focus" class="view"><div class="capsule" style="margin-top:14px"><div class="timer" id="t">25:00</div><p class="sub" id="mode">focus</p>
+<div class="btnrow"><button class="btn-p" onclick="start()">Start</button><button class="btn-g" onclick="pause()">Pause</button><button class="btn-g" onclick="reset()">Reset</button></div>
+<div class="btnrow" style="margin-top:10px"><button class="btn-g" onclick="setP('focus',25)">25</button><button class="btn-g" onclick="setP('focus',50)">50</button><button class="btn-g" onclick="setP('focus',90)">90</button></div></div>
+<div class="card"><h3>Tasks</h3><div class="row"><input id="nt" placeholder="Add task + Enter" onkeydown="if(event.key==='Enter')addTask()"><button class="btn-p" onclick="addTask()">Add</button></div><div id="tasks"></div></div></section>
+
+<!-- STATS -->
+<section id="stats-view" class="view"><div class="card"><h3>Statistics</h3><div class="grid" id="stats"></div><div id="bars" style="display:flex;gap:8px;margin-top:12px"></div></div>
+<div class="card"><div class="row"><span>Notifications</span><div class="tog" role="switch" aria-checked="true" tabindex="0" onclick="tog(this,'togN')"></div></div><div class="row"><span>Strict mode</span><div class="tog" role="switch" aria-checked="true" tabindex="0" onclick="tog(this,'togS')"></div></div><div class="row"><span>Backup</span><button class="btn-g" onclick="exp()">Export</button></div></div></section>
+
+<nav><button data-h="#focus" onclick="nav('#focus')">Focus</button><button data-h="#stats-view" onclick="nav('#stats-view')">Stats</button><button data-h="#setup" onclick="nav('#setup')">Setup</button></nav>
+</div><script src="app.js"></script><script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js'))}</script></body></html>
