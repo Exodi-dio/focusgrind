@@ -19,7 +19,7 @@ function render(){
  $('#bars').innerHTML=tm.map(([k,v])=>'<div style="flex:1;text-align:center"><div style="height:90px;display:flex;align-items:flex-end"><div class="bar" style="width:100%"><i style="width:'+Math.round(v/max*100)+'%"></i></div></div><small style="color:var(--mut)">'+k.slice(5)+'</small></div>').join('')||'<p class="sub">No sessions yet — start your first grind.</p>';
  $('#stats').innerHTML='<div class="stat"><b>'+streak()+'</b><br><span>day streak</span></div><div class="stat"><b>'+Math.round((S.hist[today()]||0)/60)+'</b><br><span>min today</span></div><div class="stat"><b>'+mins()+'</b><br><span>total min</span></div><div class="stat"><b>'+S.tasks.filter(t=>t.done).length+'/'+S.tasks.length+'</b><br><span>tasks</span></div>';
  $('#tasks').innerHTML=S.tasks.map((t,i)=>'<div class="row"><span>'+(t.done?'✓ ':'')+t.name+'</span><button class="btn-g" onclick="togT('+i+')">'+(t.done?'undo':'done')+'</button></div>').join('')||'<p class="sub">Add your first task.</p>';
- document.querySelectorAll('.view').forEach(v=>v.classList.remove('on')); const h=location.hash||'#focus'; (document.querySelector(h)||document.querySelector('#focus')).classList.add('on');
+ try{var r=document.querySelector('#ring');if(r){var st=streak();r.textContent=st;r.style.setProperty('--p',Math.min(100,st/7*100)+'%')}}catch(e){}document.querySelectorAll('.view').forEach(v=>v.classList.remove('on')); const h=location.hash||'#focus'; (document.querySelector(h)||document.querySelector('#focus')).classList.add('on');
  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.h===h));
 }
 window.togT=i=>{S.tasks[i].done=!S.tasks[i].done;save()};
