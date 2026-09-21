@@ -1,27 +1,25 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Dio Grind — Focus Tracker by Dio</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#7F52FF">
+<title>Drift — Focus, distilled</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#F7F5F0">
 <link rel="icon" href="assets/logo.svg"><link rel="stylesheet" href="styles.css"></head>
-<body><div class="blob" style="width:280px;height:280px;background:#7F52FF;top:-60px;left:-60px"></div><div class="blob" style="width:240px;height:240px;background:#00A4EF;bottom:10%;right:-80px"></div>
-<div class="wrap">
-<div class="brand"><img class="float" src="assets/logo.svg" alt="Dio Grind logo"><div><b>Dio Grind</b><small>BY DIO_Exodi · FR</small></div><span class="badge">● live PWA</span></div>
-<div class="mq"><span>DEEP WORK · LIQUID FOCUS · STREAKS · CALM · DEEP WORK · LIQUID FOCUS · STREAKS · CALM · </span></div>
-<section id="intro" class="view stag">
-<div class="onb" style="display:block"><img loading="lazy" src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Deep study desk"><div class="shade"><div><h2>Grind in capsules.</h2><p class="sub" style="text-align:left">Liquid timer, calm streaks, zero noise.</p><button class="btn-p shimmer" onclick="onbGo(1)">Next</button></div></div></div>
-<div class="onb" style="display:none"><img loading="lazy" src="https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Focus notebook"><div class="shade"><div><h2>Track everything.</h2><p class="sub" style="text-align:left">Tasks, subjects, weekly bars.</p><button class="btn-p shimmer" onclick="onbGo(2)">Next</button></div></div></div>
-<div class="onb" style="display:none"><img loading="lazy" src="https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Calm workspace"><div class="shade"><div><h2>Stay private.</h2><p class="sub" style="text-align:left">Local-first. No signup.</p><button class="btn-p shimmer" onclick="onbGo(3)">Start setup</button></div></div></div>
-<div class="dots"><i class="on"></i><i></i><i></i></div>
-</section>
-<section id="setup" class="view"><div class="card stag"><h3>Setup in 10 seconds</h3>
-<label class="sub" style="text-align:left">Daily goal (min)</label><input type="number" value="120" onchange="setP('goal',this.value)">
-<label class="sub" style="text-align:left">Focus length</label><input type="number" value="25" onchange="setP('focus',this.value)">
-<div class="btnrow" style="margin-top:12px"><button class="btn-p shimmer" onclick="nav('#focus')">Start grinding</button></div></div></section>
-<section id="focus" class="view"><div class="bento stag">
-<div class="glow"><div class="timer" id="t">25:00</div><p class="sub" id="mode">focus</p>
-<div class="btnrow"><button class="btn-p shimmer" onclick="start()">Start</button><button class="btn-g" onclick="pause()">Pause</button><button class="btn-g" onclick="reset()">Reset</button></div></div>
-<div class="card" style="margin-top:0"><span class="badge">streak</span><div class="ring" id="ring" style="--p:40%;margin:10px auto">0</div><p class="sub">days</p></div></div>
-<div class="btnrow" style="margin-top:10px"><button class="btn-g" onclick="setP('focus',25)">25</button><button class="btn-g" onclick="setP('focus',50)">50</button><button class="btn-g" onclick="setP('focus',90)">90</button></div>
-<div class="card"><h3>Tasks</h3><div class="row"><input id="nt" placeholder="Add task + Enter" onkeydown="if(event.key==='Enter')addTask()"><button class="btn-p" onclick="addTask()">Add</button></div><div id="tasks"></div></div></section>
-<section id="stats-view" class="view"><div class="card stag"><h3>Statistics</h3><div class="grid" id="stats"></div><div id="bars" style="display:flex;gap:8px;margin-top:12px"></div></div>
-<div class="card"><div class="row"><span>Notifications</span><div class="tog" role="switch" aria-checked="true" tabindex="0" onclick="tog(this,'togN')"></div></div><div class="row"><span>Strict mode</span><div class="tog" role="switch" aria-checked="true" tabindex="0" onclick="tog(this,'togS')"></div></div><div class="row"><span>Backup</span><button class="btn-g" onclick="exp()">Export</button></div></div></section>
+<body><div class="wrap">
+<div class="brand"><img src="assets/logo.svg" alt="Drift logo"><div><b>Drift</b><br><small>FOCUS · DISTILLED</small></div><span class="pill" style="margin-left:auto">v1 minimal</span></div>
+<div class="mq"><span>21st bento distilled · motionsites calm motion · pexels light study · minimal widgets · </span></div>
+<section id="intro" class="view">
+<div class="onb"><img loading="lazy" src="https://images.pexels.com/photos/1497036/pexels-photo-1497036.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Minimal desk"><div class="pad"><h3>Less, but better.</h3><p class="sub">One timer. Clear stats. Nothing loud.</p><button class="btn-p" onclick="onbGo(1)">Next</button></div></div>
+<div class="onb" style="display:none"><img loading="lazy" src="https://images.pexels.com/photos/4195328/pexels-photo-4195328.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Calm notes"><div class="pad"><h3>Widgets that whisper.</h3><p class="sub">Today ring, habit dots, week bars.</p><button class="btn-p" onclick="onbGo(2)">Next</button></div></div>
+<div class="onb" style="display:none"><img loading="lazy" src="https://images.pexels.com/photos/3082341/pexels-photo-3082341.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Soft light"><div class="pad"><h3>Private by default.</h3><p class="sub">Local-first. No account.</p><button class="btn-p" onclick="onbGo(3)">Set up</button></div></div>
+<div class="dots"><i class="on"></i><i></i><i></i></div></section>
+<section id="setup" class="view"><div class="card"><h3>Setup</h3><p class="sub">Goal + focus length. 10 seconds.</p>
+<label class="sub">Daily goal (min)</label><input type="number" value="120" onchange="setP('goal',this.value)">
+<label class="sub">Focus (min)</label><input type="number" value="25" onchange="setP('focus',this.value)">
+<p><button class="btn-p" onclick="nav('#focus')">Enter Drift</button></p></div></section>
+<section id="focus" class="view"><div class="hero"><span class="pill" style="background:transparent;color:#B9B4A8;border-color:#2A2A28">FOCUS WIDGET</span><div class="timer" id="t">25:00</div><p class="sub" id="mode" style="color:#B9B4A8">focus</p>
+<p><button class="btn-p" style="background:#F7F5F0;color:#141412" onclick="start()">Start</button> <button onclick="pause()" style="background:transparent;color:#F7F5F0;border-color:#333">Pause</button> <button onclick="reset()" style="background:transparent;color:#F7F5F0;border-color:#333">Reset</button></p>
+<p><button onclick="setP('focus',25)" style="background:transparent;color:#F7F5F0;border-color:#333">25</button> <button onclick="setP('focus',50)" style="background:transparent;color:#F7F5F0;border-color:#333">50</button> <button onclick="setP('focus',90)" style="background:transparent;color:#F7F5F0;border-color:#333">90</button></p></div>
+<div class="grid2"><div class="card"><span class="pill">today ring</span><div class="ring" id="ring" style="--p:30%;margin:10px auto"><span>0</span></div></div>
+<div class="card"><span class="pill">habits</span><div id="dots" style="font-size:20px;margin-top:8px">○○○○○○○</div><p class="sub">7-day dots</p></div></div>
+<div class="card"><h3>Tasks</h3><div class="row"><input id="nt" placeholder="Add task" onkeydown="if(event.key==='Enter')addTask()"><button onclick="addTask()">Add</button></div><div id="tasks"></div></div></section>
+<section id="stats-view" class="view"><div class="card"><h3>Week</h3><div class="grid2" id="stats"></div><div id="bars" style="display:flex;gap:6px;margin-top:10px"></div></div>
+<div class="card"><h3>Library</h3><div class="row"><span>Session notes</span><button onclick="nav('#setup')">Open</button></div><div class="row"><span>Notifications</span><div class="tog" role="switch" aria-checked="true" onclick="tog(this,'togN')"></div></div><div class="row"><span>Strict</span><div class="tog" role="switch" aria-checked="true" onclick="tog(this,'togS')"></div></div><div class="row"><span>Backup</span><button onclick="exp()">Export</button></div></div></section>
 <nav><button data-h="#focus" onclick="nav('#focus')">Focus</button><button data-h="#stats-view" onclick="nav('#stats-view')">Stats</button><button data-h="#setup" onclick="nav('#setup')">Setup</button></nav>
 </div><script src="app.js"></script><script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js'))}</script></body></html>
