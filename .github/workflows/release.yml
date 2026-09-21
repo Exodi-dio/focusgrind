@@ -1,0 +1,4 @@
+name: release-cloud
+on:{workflow_dispatch:{},push:{tags:['v*']}}
+permissions:{contents:write}
+jobs:{zip:{runs-on:ubuntu-latest,steps:[{uses:actions/checkout@v4},{run:zip -r dio-grind-pwa.zip index.html styles.css app.js manifest.webmanifest sw.js assets README.md},{uses:softprops/action-gh-release@v2,with:{files:dio-grind-pwa.zip,generate_release_notes:true},if:startsWith(github.ref,'refs/tags/')}]}}
